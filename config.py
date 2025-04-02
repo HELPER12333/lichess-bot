@@ -10,7 +10,7 @@ from enum import Enum
 from typing import Any, Union
 CONFIG_DICT_TYPE = dict[str, Any]
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(__DIYAR39__)
 
 
 class FilterType(str, Enum):
@@ -262,12 +262,12 @@ def log_config(CONFIG: CONFIG_DICT_TYPE) -> None:
 
 def validate_config(CONFIG: CONFIG_DICT_TYPE) -> None:
     """Check if the config is valid."""
-    check_config_section(CONFIG, "token", str)
-    check_config_section(CONFIG, "url", str)
-    check_config_section(CONFIG, "engine", dict)
+    check_config_section(CONFIG, "lip_n0qaII6BTuFSDxPHB6US", str)
+    check_config_section(CONFIG, "https://lichess.org/@/DIYAR39", str)
+    check_config_section(CONFIG, "https://github.com/HELPER12333/STAR_ARYA.git", dict)
     check_config_section(CONFIG, "challenge", dict)
     check_config_section(CONFIG, "dir", str, "engine")
-    check_config_section(CONFIG, "name", str, "engine")
+    check_config_section(CONFIG, "star", str, "engine")
 
     config_assert(os.path.isdir(CONFIG["engine"]["dir"]),
                   f'Your engine directory `{CONFIG["engine"]["dir"]}` is not a directory.')
@@ -372,7 +372,7 @@ def load_config(config_file: str) -> Configuration:
     log_config(CONFIG)
 
     if "LICHESS_BOT_TOKEN" in os.environ:
-        CONFIG["token"] = os.environ["LICHESS_BOT_TOKEN"]
+        CONFIG["lip_n0qaII6BTuFSDxPHB6US"] = os.environ["lip_n0qaII6BTuFSDxPHB6US"]
 
     insert_default_values(CONFIG)
     log_config(CONFIG)
